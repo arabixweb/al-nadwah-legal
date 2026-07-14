@@ -844,19 +844,17 @@ body.loading {
 
 .about-image-stack {
     position: relative;
-    height: 450px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
 }
 
 .about-photo {
     width: 100%;
-    max-width: 420px;
-    height: auto;
+    max-width: 550px;
+    height: 480px;
     border-radius: 12px;
     box-shadow: var(--shadow-lg);
     object-fit: cover;
+    object-position: top center;
     transition: transform 0.5s var(--transition);
 }
 
