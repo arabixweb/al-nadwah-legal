@@ -8,8 +8,8 @@ const translations = {
     en: {
         // Nav
         "Home": "Home",
-        "About": "About",
-        "Services": "Services",
+        "About the Firm": "About the Firm",
+        "Expertise": "Expertise",
         "Contact": "Contact",
         "Get Started": "Get Started",
         "Learn More": "Learn More",
@@ -132,8 +132,8 @@ const translations = {
     ar: {
         // Nav
         "Home": "الرئيسية",
-        "About": "من نحن",
-        "Services": "خدماتنا",
+        "About the Firm": "عن المكتب",
+        "Expertise": "خبراتنا",
         "Contact": "تواصل",
         "Get Started": "ابدأ الآن",
         "Learn More": "اعرف المزيد",

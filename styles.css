@@ -261,9 +261,11 @@ body.loading {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-light);
-    font-size: 0.9rem;
-    font-weight: 400;
+    color: var(--deep-brown);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     position: relative;
     transition: color 0.3s;
 }
