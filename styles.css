@@ -510,6 +510,65 @@ body.loading {
     background: #3d2b1f;
 }
 
+/* About Background Animation */
+.about-bg-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.about-shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.08;
+}
+
+.about-shape-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--gold);
+    top: -100px;
+    right: -100px;
+    animation: floatShape1 8s ease-in-out infinite;
+}
+
+.about-shape-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--gold);
+    bottom: -80px;
+    left: -80px;
+    animation: floatShape2 10s ease-in-out infinite;
+}
+
+.about-shape-3 {
+    width: 200px;
+    height: 200px;
+    background: var(--white);
+    top: 50%;
+    left: 50%;
+    animation: floatShape3 12s ease-in-out infinite;
+}
+
+@keyframes floatShape1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-30px, 30px) scale(1.1); }
+}
+
+@keyframes floatShape2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, -30px) scale(1.1); }
+}
+
+@keyframes floatShape3 {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.05; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.1; }
+}
+
 .about-image-frame {
     position: relative;
     border-radius: 12px;
