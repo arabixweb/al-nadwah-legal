@@ -437,7 +437,7 @@ body.loading {
 /* About Hero - Diagonal Split */
 .about-hero {
     display: flex;
-    min-height: 55vh;
+    min-height: 45vh;
     margin-top: 72px;
 }
 
@@ -446,7 +446,7 @@ body.loading {
     background: var(--deep-brown);
     display: flex;
     align-items: center;
-    padding: 4rem 6%;
+    padding: 3rem 6%;
     clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
     position: relative;
     z-index: 2;
@@ -469,12 +469,20 @@ body.loading {
     max-width: 500px;
 }
 
+.about-hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
 .breadcrumb {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .breadcrumb a {
@@ -493,14 +501,6 @@ body.loading {
 
 .breadcrumb span:last-child {
     color: var(--gold);
-}
-
-.about-hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 4rem;
-    font-weight: 700;
-    color: var(--white);
-    line-height: 1.1;
 }
 
 /* Mobile Menu */
