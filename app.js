@@ -273,6 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(hidePreloader, 2000);
     
     initNav();
+    initAboutParticles();
     initLangToggle();
     initScrollAnimations();
     initCounterAnimations();
@@ -281,6 +282,29 @@ document.addEventListener('DOMContentLoaded', function() {
     applyLanguage();
     
 });
+
+// ===== About Section Particles =====
+function initAboutParticles() {
+    const container = document.getElementById('aboutParticles');
+    if (!container) return;
+    
+    const particleCount = 30;
+    
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'about-particle' + (Math.random() > 0.7 ? ' line' : '');
+        
+        const size = Math.random() * 4 + 2;
+        particle.style.width = particle.classList.contains('line') ? '1px' : size + 'px';
+        particle.style.height = particle.classList.contains('line') ? (Math.random() * 40 + 20) + 'px' : size + 'px';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDuration = (Math.random() * 10 + 8) + 's';
+        particle.style.animationDelay = (Math.random() * 10) + 's';
+        particle.style.opacity = Math.random() * 0.3 + 0.1;
+        
+        container.appendChild(particle);
+    }
+}
 
 // ===== Navigation =====
 function initNav() {
