@@ -467,8 +467,6 @@ function initHeroCanvas() {
     
     const ctx = canvas.getContext('2d');
     let w, h, particles;
-    const金色 = '#C4A76C';
-    const金色暗 = '#8B6914';
     
     function resize() {
         w = canvas.width = canvas.parentElement.offsetWidth;
@@ -506,7 +504,7 @@ function initHeroCanvas() {
             
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(196, 167, 108, ${p.opacity})`;
+            ctx.fillStyle = 'rgba(196, 167, 108, ' + p.opacity + ')';
             ctx.fill();
             
             for (let j = i + 1; j < particles.length; j++) {
@@ -519,7 +517,7 @@ function initHeroCanvas() {
                     ctx.beginPath();
                     ctx.moveTo(p.x, p.y);
                     ctx.lineTo(p2.x, p2.y);
-                    ctx.strokeStyle = `rgba(196, 167, 108, ${0.08 * (1 - dist / 120)})`;
+                    ctx.strokeStyle = 'rgba(196, 167, 108, ' + (0.08 * (1 - dist / 120)) + ')';
                     ctx.lineWidth = 0.5;
                     ctx.stroke();
                 }
@@ -533,7 +531,7 @@ function initHeroCanvas() {
     createParticles();
     drawParticles();
     
-    window.addEventListener('resize', () => {
+    window.addEventListener('resize', function() {
         resize();
         createParticles();
     });
