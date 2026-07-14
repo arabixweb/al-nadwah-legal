@@ -614,21 +614,6 @@ body.loading {
     border-color: var(--white);
 }
 
-/* Hero Canvas Background */
-.hero-canvas-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-}
-
-.hero-canvas-bg canvas {
-    width: 100%;
-    height: 100%;
-}
-
 /* Gradient Orbs */
 .hero-gradient-orb {
     position: absolute;

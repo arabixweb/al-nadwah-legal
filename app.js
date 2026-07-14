@@ -280,7 +280,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initPageTransitions();
     applyLanguage();
     
-    try { initHeroCanvas(); } catch(e) { console.log('Canvas error:', e); }
 });
 
 // ===== Navigation =====
@@ -451,81 +450,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== Hero Canvas Animation =====
-function initHeroCanvas() {
-    var canvas = document.getElementById('heroCanvas');
-    if (!canvas) return;
-    
-    var ctx = canvas.getContext('2d');
-    var w, h, particles;
-    
-    function resize() {
-        w = canvas.width = canvas.parentElement.offsetWidth;
-        h = canvas.height = canvas.parentElement.offsetHeight;
-    }
-    
-    function createParticles() {
-        particles = [];
-        var count = Math.min(Math.floor((w * h) / 25000), 60);
-        for (var i = 0; i < count; i++) {
-            particles.push({
-                x: Math.random() * w,
-                y: Math.random() * h,
-                vx: (Math.random() - 0.5) * 0.3,
-                vy: (Math.random() - 0.5) * 0.3,
-                r: Math.random() * 1.5 + 0.5,
-                opacity: Math.random() * 0.3 + 0.05
-            });
-        }
-    }
-    
-    function drawParticles() {
-        ctx.clearRect(0, 0, w, h);
-        
-        for (var i = 0; i < particles.length; i++) {
-            var p = particles[i];
-            
-            p.x += p.vx;
-            p.y += p.vy;
-            
-            if (p.x < 0) p.x = w;
-            if (p.x > w) p.x = 0;
-            if (p.y < 0) p.y = h;
-            if (p.y > h) p.y = 0;
-            
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(196, 167, 108, ' + p.opacity + ')';
-            ctx.fill();
-            
-            for (var j = i + 1; j < particles.length; j++) {
-                var p2 = particles[j];
-                var dx = p.x - p2.x;
-                var dy = p.y - p2.y;
-                var dist = dx * dx + dy * dy;
-                
-                if (dist < 14400) {
-                    var sqrtDist = Math.sqrt(dist);
-                    ctx.beginPath();
-                    ctx.moveTo(p.x, p.y);
-                    ctx.lineTo(p2.x, p2.y);
-                    ctx.strokeStyle = 'rgba(196, 167, 108, ' + (0.06 * (1 - sqrtDist / 120)) + ')';
-                    ctx.lineWidth = 0.5;
-                    ctx.stroke();
-                }
-            }
-        }
-        
-        requestAnimationFrame(drawParticles);
-    }
-    
-    resize();
-    createParticles();
-    drawParticles();
-    
-    window.addEventListener('resize', function() {
-        resize();
-        createParticles();
-    });
-}
 }
