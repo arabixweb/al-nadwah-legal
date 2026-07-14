@@ -23,10 +23,6 @@
         </div>
     </div>
 
-    <!-- Custom Cursor -->
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-follower" id="cursorFollower"></div>
-
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-container">
@@ -84,44 +80,39 @@
         </div>
     </div>
 
-    <!-- Hero Section - Split Layout -->
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-bg-shapes">
-            <div class="floating-shape shape-circle"></div>
-            <div class="floating-shape shape-diamond"></div>
-            <div class="floating-shape shape-hex"></div>
-            <div class="floating-shape shape-triangle"></div>
-            <div class="floating-shape shape-ring"></div>
+        <div class="hero-canvas-bg">
+            <canvas id="heroCanvas"></canvas>
         </div>
-        <div class="hero-3d-container" id="hero3d">
-            <div class="hero-3d-scene" id="hero3dScene">
-                <div class="shape-3d" id="shape3d">
-                    <div class="shape-face face-1"></div>
-                    <div class="shape-face face-2"></div>
-                    <div class="shape-face face-3"></div>
-                    <div class="shape-face face-4"></div>
-                    <div class="shape-face face-5"></div>
-                    <div class="shape-face face-6"></div>
-                </div>
-                <div class="shape-ring ring-1"></div>
-                <div class="shape-ring ring-2"></div>
-                <div class="shape-ring ring-3"></div>
+        <div class="hero-gradient-orb orb-1"></div>
+        <div class="hero-gradient-orb orb-2"></div>
+        <div class="hero-gradient-orb orb-3"></div>
+        <div class="hero-mesh-lines">
+            <div class="mesh-line line-1"></div>
+            <div class="mesh-line line-2"></div>
+            <div class="mesh-line line-3"></div>
+            <div class="mesh-line line-4"></div>
+            <div class="mesh-line line-5"></div>
+        </div>
+        <div class="hero-floating-shapes">
+            <div class="h-shape h-shape-1">
+                <svg viewBox="0 0 100 100" fill="none" stroke="#C4A76C" stroke-width="0.8"><polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"/></svg>
             </div>
-            <div class="hero-3d-particles" id="hero3dParticles"></div>
-            <div class="hero-3d-glow"></div>
-            <div class="hero-3d-stats">
-                <div class="stat-orbit orbit-1">
-                    <div class="orbit-dot"></div>
-                    <div class="orbit-label"><span class="stat-number" data-count="25">0</span> <span data-en="Years" data-ar="سنة">Years</span></div>
-                </div>
-                <div class="stat-orbit orbit-2">
-                    <div class="orbit-dot"></div>
-                    <div class="orbit-label"><span class="stat-number" data-count="500">0</span> <span data-en="Cases" data-ar="قضية">Cases</span></div>
-                </div>
-                <div class="stat-orbit orbit-3">
-                    <div class="orbit-dot"></div>
-                    <div class="orbit-label"><span class="stat-number" data-count="98">0</span>% <span data-en="Win" data-ar="فوز">Win</span></div>
-                </div>
+            <div class="h-shape h-shape-2">
+                <svg viewBox="0 0 80 80" fill="none" stroke="#C4A76C" stroke-width="0.8"><rect x="10" y="10" width="60" height="60" rx="4" transform="rotate(45 40 40)"/></svg>
+            </div>
+            <div class="h-shape h-shape-3">
+                <svg viewBox="0 0 60 60" fill="none" stroke="#C4A76C" stroke-width="0.8"><circle cx="30" cy="30" r="25"/></svg>
+            </div>
+            <div class="h-shape h-shape-4">
+                <svg viewBox="0 0 120 120" fill="none" stroke="#C4A76C" stroke-width="0.5"><path d="M60 10L110 35V85L60 110L10 85V35Z"/></svg>
+            </div>
+            <div class="h-shape h-shape-5">
+                <svg viewBox="0 0 90 90" fill="none" stroke="#C4A76C" stroke-width="0.6"><polygon points="45,5 85,25 85,65 45,85 5,65 5,25"/></svg>
+            </div>
+            <div class="h-shape h-shape-6">
+                <svg viewBox="0 0 50 50" fill="none" stroke="#C4A76C" stroke-width="0.8"><circle cx="25" cy="25" r="20"/><circle cx="25" cy="25" r="10"/></svg>
             </div>
         </div>
         <div class="hero-container">
@@ -135,7 +126,7 @@
                     <span class="title-line reveal-up title-accent" data-en="Meets" data-ar="القانون">Meets</span>
                     <span class="title-line reveal-up" data-en="Precision" data-ar="بالدقة">Precision</span>
                 </h1>
-                <p class="hero-desc reveal-up" data-en="Navigating Saudi Arabia's legal landscape with decades of expertise. We provide strategic counsel to individuals, businesses, and government entities across the Kingdom." data-ar="نavigate المشهد القانوني السعودي بعقود من الخبرة. نقدم استشارات استراتيجية للأفراد والشركات والكالات الحكومية في جميع أنحاء المملكة.">Navigating Saudi Arabia's legal landscape with decades of expertise. We provide strategic counsel to individuals, businesses, and government entities across the Kingdom.</p>
+                <p class="hero-desc reveal-up" data-en="Navigating Saudi Arabia's legal landscape with decades of expertise. We provide strategic counsel to individuals, businesses, and government entities across the Kingdom." data-ar="نnavigate المشهد القانوني السعودي بعقود من الخبرة. نقدم استشارات استراتيجية للأفراد والشركات والكالات الحكومية في جميع أنحاء المملكة.">Navigating Saudi Arabia's legal landscape with decades of expertise. We provide strategic counsel to individuals, businesses, and government entities across the Kingdom.</p>
                 <div class="hero-buttons reveal-up">
                     <a href="contact.html" class="btn btn-primary magnetic" data-en="Schedule Consultation" data-ar="احجز استشارة">
                         <span>Schedule Consultation</span>

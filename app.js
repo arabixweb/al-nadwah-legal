@@ -264,11 +264,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initNav();
     initLangToggle();
     initScrollAnimations();
-    initCustomCursor();
     initCounterAnimations();
     initFooterParticles();
     initPageTransitions();
-    initHero3D();
+    initHeroCanvas();
     applyLanguage();
 });
 
@@ -375,26 +374,6 @@ function initScrollAnimations() {
     });
 }
 
-// ===== Custom Cursor =====
-function initCustomCursor() {
-    const cursor = document.getElementById('cursor');
-    const follower = document.getElementById('cursorFollower');
-    
-    if (!cursor || !follower || window.innerWidth < 768) return;
-    
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        follower.style.left = e.clientX + 'px';
-        follower.style.top = e.clientY + 'px';
-    });
-    
-    document.querySelectorAll('a, button, .service-card, .testimonial-card, .vision-card').forEach(el => {
-        el.addEventListener('mouseenter', () => follower.classList.add('hover'));
-        el.addEventListener('mouseleave', () => follower.classList.remove('hover'));
-    });
-}
-
 // ===== Counter Animations =====
 function initCounterAnimations() {
     const counters = document.querySelectorAll('[data-count]');
@@ -481,46 +460,82 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== Hero 3D Animation =====
-function initHero3D() {
-    const container = document.getElementById('hero3d');
-    const scene = document.getElementById('hero3dScene');
-    const particlesContainer = document.getElementById('hero3dParticles');
+// ===== Hero Canvas Animation =====
+function initHeroCanvas() {
+    const canvas = document.getElementById('heroCanvas');
+    if (!canvas) return;
     
-    if (!container || !scene) return;
+    const ctx = canvas.getContext('2d');
+    let w, h, particles;
+    const金色 = '#C4A76C';
+    const金色暗 = '#8B6914';
     
-    // Create floating particles
-    if (particlesContainer) {
-        for (let i = 0; i < 40; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle-3d';
-            
-            const angle = Math.random() * Math.PI * 2;
-            const radius = 120 + Math.random() * 150;
-            const tx = Math.cos(angle) * radius;
-            const ty = Math.sin(angle) * radius;
-            
-            particle.style.setProperty('--tx', tx + 'px');
-            particle.style.setProperty('--ty', ty + 'px');
-            particle.style.setProperty('--duration', (6 + Math.random() * 10) + 's');
-            particle.style.setProperty('--delay', (Math.random() * 8) + 's');
-            particle.style.left = (35 + Math.random() * 30) + '%';
-            particle.style.top = (35 + Math.random() * 30) + '%';
-            
-            particlesContainer.appendChild(particle);
+    function resize() {
+        w = canvas.width = canvas.parentElement.offsetWidth;
+        h = canvas.height = canvas.parentElement.offsetHeight;
+    }
+    
+    function createParticles() {
+        particles = [];
+        const count = Math.floor((w * h) / 12000);
+        for (let i = 0; i < count; i++) {
+            particles.push({
+                x: Math.random() * w,
+                y: Math.random() * h,
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                r: Math.random() * 2 + 0.5,
+                opacity: Math.random() * 0.4 + 0.1
+            });
         }
     }
     
-    // Pause animation when not visible
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                scene.style.animationPlayState = 'running';
-            } else {
-                scene.style.animationPlayState = 'paused';
+    function drawParticles() {
+        ctx.clearRect(0, 0, w, h);
+        
+        for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            
+            p.x += p.vx;
+            p.y += p.vy;
+            
+            if (p.x < 0) p.x = w;
+            if (p.x > w) p.x = 0;
+            if (p.y < 0) p.y = h;
+            if (p.y > h) p.y = 0;
+            
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(196, 167, 108, ${p.opacity})`;
+            ctx.fill();
+            
+            for (let j = i + 1; j < particles.length; j++) {
+                const p2 = particles[j];
+                const dx = p.x - p2.x;
+                const dy = p.y - p2.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                
+                if (dist < 120) {
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(p2.x, p2.y);
+                    ctx.strokeStyle = `rgba(196, 167, 108, ${0.08 * (1 - dist / 120)})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.stroke();
+                }
             }
-        });
-    });
+        }
+        
+        requestAnimationFrame(drawParticles);
+    }
     
-    observer.observe(container);
+    resize();
+    createParticles();
+    drawParticles();
+    
+    window.addEventListener('resize', () => {
+        resize();
+        createParticles();
+    });
+}
 }
