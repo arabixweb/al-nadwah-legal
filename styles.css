@@ -434,6 +434,75 @@ body.loading {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* About Hero - Diagonal Split */
+.about-hero {
+    display: flex;
+    min-height: 55vh;
+    margin-top: 72px;
+}
+
+.about-hero-left {
+    flex: 1;
+    background: var(--deep-brown);
+    display: flex;
+    align-items: center;
+    padding: 4rem 6%;
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+    position: relative;
+    z-index: 2;
+}
+
+.about-hero-right {
+    flex: 0.8;
+    position: relative;
+    margin-left: -15%;
+}
+
+.about-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.about-hero-content {
+    max-width: 500px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--white);
+}
+
+.breadcrumb span {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.breadcrumb span:last-child {
+    color: var(--gold);
+}
+
+.about-hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.1;
+}
+
 /* Mobile Menu */
 .mobile-menu {
     position: fixed;
