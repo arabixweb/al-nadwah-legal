@@ -268,6 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounterAnimations();
     initFooterParticles();
     initPageTransitions();
+    initHero3D();
     applyLanguage();
 });
 
@@ -479,3 +480,47 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// ===== Hero 3D Animation =====
+function initHero3D() {
+    const container = document.getElementById('hero3d');
+    const scene = document.getElementById('hero3dScene');
+    const particlesContainer = document.getElementById('hero3dParticles');
+    
+    if (!container || !scene) return;
+    
+    // Create floating particles
+    if (particlesContainer) {
+        for (let i = 0; i < 40; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle-3d';
+            
+            const angle = Math.random() * Math.PI * 2;
+            const radius = 120 + Math.random() * 150;
+            const tx = Math.cos(angle) * radius;
+            const ty = Math.sin(angle) * radius;
+            
+            particle.style.setProperty('--tx', tx + 'px');
+            particle.style.setProperty('--ty', ty + 'px');
+            particle.style.setProperty('--duration', (6 + Math.random() * 10) + 's');
+            particle.style.setProperty('--delay', (Math.random() * 8) + 's');
+            particle.style.left = (35 + Math.random() * 30) + '%';
+            particle.style.top = (35 + Math.random() * 30) + '%';
+            
+            particlesContainer.appendChild(particle);
+        }
+    }
+    
+    // Pause animation when not visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                scene.style.animationPlayState = 'running';
+            } else {
+                scene.style.animationPlayState = 'paused';
+            }
+        });
+    });
+    
+    observer.observe(container);
+}
