@@ -158,13 +158,41 @@ body.loading {
 }
 
 .nav.scrolled {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.97);
     backdrop-filter: blur(20px);
     padding: 0.7rem 0;
     box-shadow: 0 2px 40px rgba(61, 43, 31, 0.06);
 }
 
-.nav.scrolled .nav-cta {
+.hero-page .nav.scrolled .nav-logo,
+.hero-page .nav.scrolled .logo-en {
+    color: var(--deep-brown);
+}
+
+.hero-page .nav.scrolled .logo-ar {
+    color: var(--brown);
+}
+
+.hero-page .nav.scrolled .nav-link {
+    color: var(--text-light);
+}
+
+.hero-page .nav.scrolled .nav-link:hover,
+.hero-page .nav.scrolled .nav-link.active {
+    color: var(--deep-brown);
+}
+
+.hero-page .nav.scrolled .lang-toggle {
+    border-color: var(--border);
+    color: var(--text-light);
+}
+
+.hero-page .nav.scrolled .lang-toggle:hover {
+    border-color: var(--gold);
+    color: var(--dark-brown);
+}
+
+.hero-page .nav.scrolled .nav-cta {
     background: var(--deep-brown);
     border: none;
     color: var(--white);
