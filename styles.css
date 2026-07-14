@@ -358,27 +358,33 @@ body.loading {
 }
 
 .hero-page .lang-toggle {
-    border-color: rgba(255, 255, 255, 0.4);
+    border-color: var(--deep-brown);
     color: var(--white);
+    background: rgba(61, 43, 31, 0.6);
+    backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
 
 .hero-page .lang-toggle:hover {
-    border-color: var(--gold);
+    border-color: var(--deep-brown);
     color: var(--white);
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--deep-brown);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(61, 43, 31, 0.3);
 }
 
 .hero-page .nav-cta {
-    background: transparent;
-    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    background: var(--deep-brown);
+    border: 1.5px solid var(--deep-brown);
     color: var(--white);
     transition: all 0.3s ease;
 }
 
 .hero-page .nav-cta:hover {
-    background: var(--white);
-    color: var(--deep-brown);
+    background: var(--dark-brown);
+    border-color: var(--dark-brown);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(61, 43, 31, 0.3);
 }
 
 .nav-cta:hover {
