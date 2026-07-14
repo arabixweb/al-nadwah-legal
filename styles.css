@@ -437,7 +437,7 @@ body.loading {
 /* About Hero - Diagonal Split */
 .about-hero {
     display: flex;
-    min-height: 38vh;
+    min-height: 30vh;
     margin-top: 72px;
 }
 
@@ -446,7 +446,7 @@ body.loading {
     background: var(--deep-brown);
     display: flex;
     align-items: center;
-    padding: 2.5rem 6%;
+    padding: 2rem 6%;
     clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
     position: relative;
     z-index: 2;
