@@ -439,7 +439,7 @@ body.loading {
     display: flex;
     min-height: 30vh;
     margin-top: 72px;
-    position: relative;
+    overflow: hidden;
 }
 
 .about-hero-left {
@@ -454,12 +454,8 @@ body.loading {
 }
 
 .about-hero-right {
-    flex: 1;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
     width: 55%;
+    margin-left: -12%;
     overflow: hidden;
 }
 
