@@ -437,7 +437,7 @@ body.loading {
 /* About Hero - Diagonal Split */
 .about-hero {
     display: flex;
-    min-height: 30vh;
+    height: 30vh;
     margin-top: 72px;
     overflow: hidden;
 }
@@ -457,6 +457,7 @@ body.loading {
     width: 55%;
     margin-left: -12%;
     overflow: hidden;
+    height: 100%;
 }
 
 .about-hero-img {
