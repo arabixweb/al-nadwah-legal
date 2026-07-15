@@ -46,7 +46,7 @@
     </div>
 
     <!-- Page Hero -->
-    <section class="about-hero">
+    <section class="about-hero" id="aboutHero">
         <div class="about-hero-left">
             <div class="about-hero-content">
                 <h1 class="about-hero-title reveal-up" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</h1>
@@ -61,6 +61,31 @@
             <img src="assets/05.png" alt="Contact Al-Nadwah" class="about-hero-img">
         </div>
     </section>
+
+    <script>
+        function applyRTLHero() {
+            const hero = document.getElementById('aboutHero');
+            if (!hero) return;
+            const isRTL = document.documentElement.dir === 'rtl';
+            const left = hero.querySelector('.about-hero-left');
+            const right = hero.querySelector('.about-hero-right');
+            if (isRTL && left && right) {
+                left.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)';
+                left.style.flex = '1';
+                right.style.marginLeft = '0';
+                right.style.marginRight = '-12%';
+                hero.style.flexDirection = 'row-reverse';
+            } else if (!isRTL && left && right) {
+                left.style.clipPath = 'polygon(0 0, 100% 0, 80% 100%, 0 100%)';
+                right.style.marginLeft = '-12%';
+                right.style.marginRight = '0';
+                hero.style.flexDirection = 'row';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', applyRTLHero);
+        const observer = new MutationObserver(applyRTLHero);
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['dir'] });
+    </script>
 
     <!-- Contact Form & Info -->
     <section style="padding: 6rem 0; background: var(--white);">
