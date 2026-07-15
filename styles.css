@@ -502,8 +502,8 @@ body.loading {
 [dir="rtl"] .about-hero-right {
     order: 1;
     width: 55%;
-    margin-right: 0;
-    margin-left: -12%;
+    margin-right: -12%;
+    margin-left: 0;
 }
 
 [dir="rtl"] .about-hero-content {
