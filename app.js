@@ -283,6 +283,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initNav();
     initAboutParticles();
     initVisionParticles();
+    initStoryParticles();
     initLangToggle();
     initScrollAnimations();
     initCounterAnimations();
@@ -310,6 +311,26 @@ function initAboutParticles() {
         particle.style.animationDuration = (Math.random() * 10 + 8) + 's';
         particle.style.animationDelay = (Math.random() * 10) + 's';
         particle.style.opacity = Math.random() * 0.3 + 0.1;
+        
+        container.appendChild(particle);
+    }
+}
+
+// ===== Story Section Particles =====
+function initStoryParticles() {
+    const container = document.getElementById('storyParticles');
+    if (!container) return;
+    
+    for (let i = 0; i < 25; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'story-particle';
+        
+        const size = Math.random() * 5 + 2;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDuration = (Math.random() * 10 + 8) + 's';
+        particle.style.animationDelay = (Math.random() * 10) + 's';
         
         container.appendChild(particle);
     }
