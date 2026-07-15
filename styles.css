@@ -1603,6 +1603,8 @@ body.loading {
 .footer-social {
     display: flex;
     gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .social-link {
@@ -1980,7 +1982,7 @@ a {
     animation: gradientShift 15s ease infinite;
 }
 
-/* Glow Animation */
+/* Glow Animation - removed from about-hero-title */
 @keyframes glow {
     0%, 100% {
         box-shadow: 0 0 5px rgba(196, 167, 108, 0.5);
@@ -1988,10 +1990,6 @@ a {
     50% {
         box-shadow: 0 0 20px rgba(196, 167, 108, 0.8);
     }
-}
-
-.about-hero-title {
-    animation: glow 3s ease-in-out infinite;
 }
 
 /* Section Background Pulse */
