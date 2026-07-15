@@ -521,6 +521,8 @@ body.loading {
 
 [dir="rtl"] .about-hero-content {
     text-align: right;
+    padding-right: 6%;
+    padding-left: 0;
 }
 
 /* About Story Section */
