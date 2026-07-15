@@ -87,6 +87,23 @@
         observer.observe(document.documentElement, { attributes: true, attributeFilter: ['dir'] });
     </script>
 
+    <style>
+        /* Force RTL hero override - more specific targeting */
+        html[dir="rtl"] .about-hero {
+            flex-direction: row-reverse !important;
+        }
+        html[dir="rtl"] .about-hero-left {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%) !important;
+        }
+        html[dir="rtl"] .about-hero-right {
+            margin-left: 0 !important;
+            margin-right: -12% !important;
+        }
+        html[dir="rtl"] .about-hero-content {
+            text-align: right !important;
+        }
+    </style>
+
     <!-- Contact Form & Info -->
     <section style="padding: 6rem 0; background: var(--white);">
         <div class="section-container">
