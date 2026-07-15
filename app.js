@@ -373,30 +373,12 @@ function toggleLang() {
 }
 
 function applyRTLHero() {
-    const hero = document.getElementById('aboutHero');
-    if (!hero) return;
+    const parts = document.querySelectorAll('.about-hero-part');
+    if (!parts.length) return;
     const isRTL = document.documentElement.dir === 'rtl';
-    const left = hero.querySelector('.about-hero-left');
-    const right = hero.querySelector('.about-hero-right');
-    if (!left || !right) return;
-    
-    if (isRTL) {
-        // Move image before text in DOM
-        if (hero.children[0] !== right) {
-            hero.insertBefore(right, left);
-        }
-        right.style.marginLeft = '0';
-        right.style.marginRight = '-12%';
-        left.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)';
-    } else {
-        // Move text before image in DOM
-        if (hero.children[0] !== left) {
-            hero.insertBefore(left, right);
-        }
-        right.style.marginLeft = '-12%';
-        right.style.marginRight = '0';
-        left.style.clipPath = 'polygon(0 0, 100% 0, 80% 100%, 0 100%)';
-    }
+    parts.forEach(part => {
+        part.style.display = part.getAttribute('data-lang') === (isRTL ? 'rtl' : 'ltr') ? '' : 'none';
+    });
 }
 
 function applyLanguage() {
