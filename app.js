@@ -281,6 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initFooterParticles();
     initPageTransitions();
     applyLanguage();
+    applyRTLHero();
     
 });
 
@@ -368,6 +369,28 @@ function toggleLang() {
     currentLang = currentLang === 'en' ? 'ar' : 'en';
     localStorage.setItem('lang', currentLang);
     applyLanguage();
+    applyRTLHero();
+}
+
+function applyRTLHero() {
+    const hero = document.getElementById('aboutHero');
+    if (!hero) return;
+    const isRTL = document.documentElement.dir === 'rtl';
+    const left = hero.querySelector('.about-hero-left');
+    const right = hero.querySelector('.about-hero-right');
+    if (!left || !right) return;
+    
+    if (isRTL) {
+        hero.style.flexDirection = 'row-reverse';
+        left.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)';
+        right.style.marginLeft = '0';
+        right.style.marginRight = '-12%';
+    } else {
+        hero.style.flexDirection = 'row';
+        left.style.clipPath = 'polygon(0 0, 100% 0, 80% 100%, 0 100%)';
+        right.style.marginLeft = '-12%';
+        right.style.marginRight = '0';
+    }
 }
 
 function applyLanguage() {
