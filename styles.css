@@ -453,6 +453,13 @@ body.loading {
     z-index: 2;
 }
 
+.about-hero-part {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+}
+
 .about-hero-right {
     width: 55%;
     margin-left: -12%;
