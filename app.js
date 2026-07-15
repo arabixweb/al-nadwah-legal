@@ -281,7 +281,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initFooterParticles();
     initPageTransitions();
     applyLanguage();
-    applyRTLHero();
     
 });
 
@@ -369,16 +368,6 @@ function toggleLang() {
     currentLang = currentLang === 'en' ? 'ar' : 'en';
     localStorage.setItem('lang', currentLang);
     applyLanguage();
-    applyRTLHero();
-}
-
-function applyRTLHero() {
-    const parts = document.querySelectorAll('.about-hero-part');
-    if (!parts.length) return;
-    const isRTL = document.documentElement.dir === 'rtl';
-    parts.forEach(part => {
-        part.style.display = part.getAttribute('data-lang') === (isRTL ? 'rtl' : 'ltr') ? '' : 'none';
-    });
 }
 
 function applyLanguage() {
