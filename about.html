@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Outfit:wght@200;300;400;500;600;700&family=Noto+Kufi+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=11">
+    <link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
     <div class="preloader" id="preloader">
@@ -85,7 +85,7 @@
     </section>
 
     <!-- Our Story -->
-    <section style="padding: 6rem 0; background: var(--white);">
+    <section style="padding: 6rem 0; background: linear-gradient(135deg, var(--cream) 0%, #fdfaf5 50%, var(--cream) 100%);">
         <div class="section-container">
             <div class="about-grid">
                 <div class="about-content">
@@ -94,25 +94,12 @@
                     <p class="about-text reveal-up" data-en="Our deep understanding of both Sharia law and modern legal frameworks allows us to serve our clients with unmatched precision. We combine traditional Saudi legal principles with international best practices." data-ar="فهمنا العميق للشريعة الإسلامية والأنظمة القانونية الحديثة يمكّنا من خدمة عملائنا بدقة لا مثيل لها. نجمع بين المبادئ القانونية السعودية التقليدية وأفضل الممارسات الدولية.">Our deep understanding of both Sharia law and modern legal frameworks allows us to serve our clients with unmatched precision. We combine traditional Saudi legal principles with international best practices.</p>
                 </div>
                 <div class="about-visual reveal-scale">
-                    <div class="about-image-stack">
-                        <div class="about-img about-img-1">
-                            <svg viewBox="0 0 300 400" fill="none">
-                                <rect width="300" height="400" rx="12" fill="#F5F0E8"/>
-                                <rect x="30" y="40" width="240" height="2" fill="#C4A76C" opacity="0.3"/>
-                                <rect x="30" y="60" width="180" height="2" fill="#C4A76C" opacity="0.2"/>
-                                <rect x="30" y="80" width="200" height="2" fill="#C4A76C" opacity="0.2"/>
-                                <circle cx="150" cy="250" r="60" fill="#C4A76C" opacity="0.1"/>
-                                <text x="150" y="255" text-anchor="middle" fill="#8B6914" font-size="14" font-family="Cormorant Garamond" opacity="0.5">EST. 1998</text>
-                            </svg>
-                        </div>
-                        <div class="about-img about-img-2">
-                            <svg viewBox="0 0 250 300" fill="none">
-                                <rect width="250" height="300" rx="12" fill="#C4A76C" opacity="0.1"/>
-                                <rect x="20" y="30" width="210" height="2" fill="#C4A76C" opacity="0.3"/>
-                                <rect x="20" y="50" width="150" height="2" fill="#C4A76C" opacity="0.2"/>
-                                <circle cx="125" cy="180" r="40" stroke="#8B6914" stroke-width="1" opacity="0.3"/>
-                                <text x="125" y="185" text-anchor="middle" fill="#8B6914" font-size="10" font-family="Cormorant Garamond" opacity="0.4">25+ Years</text>
-                            </svg>
+                    <div style="position: relative; max-width: 480px; margin: 0 auto;">
+                        <div style="position: absolute; top: -15px; left: -15px; right: 15px; bottom: 15px; border: 2px solid var(--gold); border-radius: 12px; z-index: 1;"></div>
+                        <img src="assets/01.png" alt="Al-Nadwah Legal Since 1998" style="position: relative; z-index: 2; width: 100%; border-radius: 12px; box-shadow: 0 20px 50px rgba(61, 43, 31, 0.25); display: block;">
+                        <div style="position: absolute; bottom: -20px; right: -10px; z-index: 3; background: var(--deep-brown); color: var(--gold); padding: 1rem 1.5rem; border-radius: 10px; box-shadow: 0 10px 30px rgba(61, 43, 31, 0.3); text-align: center;">
+                            <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700;">EST. 1998</div>
+                            <div style="font-size: 0.75rem; letter-spacing: 1px;" data-en="25+ Years of Excellence" data-ar="أكثر من 25 عاماً من التميز">25+ Years of Excellence</div>
                         </div>
                     </div>
                 </div>
@@ -171,24 +158,24 @@
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card reveal-up" style="text-align: center;">
-                    <div class="author-avatar" style="margin: 0 auto 1rem; width: 80px; height: 80px;">
-                        <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="40" fill="#C4A76C" opacity="0.15"/><circle cx="40" cy="30" r="12" fill="#C4A76C" opacity="0.3"/><path d="M18 70c0-12 10-18 22-18s22 6 22 18" fill="#C4A76C" opacity="0.2"/></svg>
+                    <div class="author-avatar" style="margin: 0 auto 1.25rem; width: 130px; height: 130px; border: 3px solid var(--gold); border-radius: 50%; overflow: hidden; box-shadow: 0 8px 25px rgba(196, 167, 108, 0.3);">
+                        <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Dr. Abdullah Al-Nadwi" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <h4 style="color: var(--deep-brown); font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;" data-en="Dr. Abdullah Al-Nadwi" data-ar="د. عبدالله الندوي">Dr. Abdullah Al-Nadwi</h4>
                     <span style="font-size: 0.85rem; color: var(--gold); display: block; margin-bottom: 0.5rem;" data-en="Senior Partner" data-ar="شريك أول">Senior Partner</span>
                     <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.6;" data-en="25+ years of legal expertise in Saudi and international law." data-ar="أكثر من 25 عاماً من الخبرة القانونية في القانون السعودي والدولي.">25+ years of legal expertise in Saudi and international law.</p>
                 </div>
                 <div class="testimonial-card reveal-up" style="text-align: center;">
-                    <div class="author-avatar" style="margin: 0 auto 1rem; width: 80px; height: 80px;">
-                        <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="40" fill="#C4A76C" opacity="0.15"/><circle cx="40" cy="30" r="12" fill="#C4A76C" opacity="0.3"/><path d="M18 70c0-12 10-18 22-18s22 6 22 18" fill="#C4A76C" opacity="0.2"/></svg>
+                    <div class="author-avatar" style="margin: 0 auto 1.25rem; width: 130px; height: 130px; border: 3px solid var(--gold); border-radius: 50%; overflow: hidden; box-shadow: 0 8px 25px rgba(196, 167, 108, 0.3);">
+                        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Mohammed Al-Qahtani" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <h4 style="color: var(--deep-brown); font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;" data-en="Mohammed Al-Qahtani" data-ar="محمد القحطاني">Mohammed Al-Qahtani</h4>
                     <span style="font-size: 0.85rem; color: var(--gold); display: block; margin-bottom: 0.5rem;" data-en="Managing Partner" data-ar="شريك إداري">Managing Partner</span>
                     <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.6;" data-en="Specializes in corporate law and Vision 2030 project advisory." data-ar="متخصص في قانون الشركات واستشارات مشاريع رؤية 2030.">Specializes in corporate law and Vision 2030 project advisory.</p>
                 </div>
                 <div class="testimonial-card reveal-up" style="text-align: center;">
-                    <div class="author-avatar" style="margin: 0 auto 1rem; width: 80px; height: 80px;">
-                        <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="40" fill="#C4A76C" opacity="0.15"/><circle cx="40" cy="30" r="12" fill="#C4A76C" opacity="0.3"/><path d="M18 70c0-12 10-18 22-18s22 6 22 18" fill="#C4A76C" opacity="0.2"/></svg>
+                    <div class="author-avatar" style="margin: 0 auto 1.25rem; width: 130px; height: 130px; border: 3px solid var(--gold); border-radius: 50%; overflow: hidden; box-shadow: 0 8px 25px rgba(196, 167, 108, 0.3);">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Noura Al-Shammari" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <h4 style="color: var(--deep-brown); font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;" data-en="Noura Al-Shammari" data-ar="نورة الشمري">Noura Al-Shammari</h4>
                     <span style="font-size: 0.85rem; color: var(--gold); display: block; margin-bottom: 0.5rem;" data-en="Senior Associate" data-ar="محامٍ أول">Senior Associate</span>

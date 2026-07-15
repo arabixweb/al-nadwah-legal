@@ -2073,12 +2073,14 @@ textarea:focus {
 
 /* Social Links Animation */
 .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s ease;
-    display: inline-block;
 }
 
 .social-link:hover {
-    transform: translateY(-5px) rotate(5deg);
+    transform: translateY(-4px);
     filter: drop-shadow(0 5px 10px rgba(196, 167, 108, 0.3));
 }
 
