@@ -127,8 +127,12 @@ const translations = {
         "Sunday - Thursday": "Sunday - Thursday",
         "9:00 AM - 6:00 PM": "9:00 AM - 6:00 PM",
         "Friday - Saturday": "Friday - Saturday",
-        "Closed": "Closed"
-    },
+         "Closed": "Closed",
+         // Contact & Address
+         "King Fahd Road, Riyadh": "King Fahd Road, Riyadh",
+         "Al Olaya District, Riyadh 12211": "Al Olaya District, Riyadh 12211",
+         "© 2026 Al-Nadwah Legal Consultants. All rights reserved.": "© 2026 Al-Nadwah Legal Consultants. All rights reserved."
+     },
     ar: {
         // Nav
         "Home": "الرئيسية",
@@ -251,9 +255,13 @@ const translations = {
         "Sunday - Thursday": "الأحد - الخميس",
         "9:00 AM - 6:00 PM": "٩:٠٠ صباحاً - ٦:٠٠ مساءً",
         "Friday - Saturday": "الجمعة - السبت",
-        "Closed": "مغلق"
-    }
-};
+         "Closed": "مغلق",
+         // Contact & Address
+         "King Fahd Road, Riyadh": "شارع الملك فهد، الرياض",
+         "Al Olaya District, Riyadh 12211": "حي العليا، الرياض 12211",
+         "© 2026 Al-Nadwah Legal Consultants. All rights reserved.": "© 2026 استشارات الندوة القانونية. جميع الحقوق محفوظة."
+     }
+ };
 
 // ===== Global State =====
 let currentLang = localStorage.getItem('lang') || 'en';
