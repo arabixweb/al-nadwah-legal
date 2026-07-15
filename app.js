@@ -284,6 +284,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initAboutParticles();
     initVisionParticles();
     initStoryParticles();
+    initStoryParticles1();
+    initStoryParticles2();
     initLangToggle();
     initScrollAnimations();
     initCounterAnimations();
@@ -332,6 +334,40 @@ function initStoryParticles() {
         particle.style.animationDuration = (Math.random() * 10 + 8) + 's';
         particle.style.animationDelay = (Math.random() * 10) + 's';
         
+        container.appendChild(particle);
+    }
+}
+
+// ===== Story Section Particles (Services Page) =====
+function initStoryParticles1() {
+    const container = document.getElementById('storyParticles1');
+    if (!container) return;
+    for (let i = 0; i < 25; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'story-particle';
+        const size = Math.random() * 5 + 2;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDuration = (Math.random() * 10 + 8) + 's';
+        particle.style.animationDelay = (Math.random() * 10) + 's';
+        container.appendChild(particle);
+    }
+}
+
+// ===== Story Section Particles (Contact Page) =====
+function initStoryParticles2() {
+    const container = document.getElementById('storyParticles2');
+    if (!container) return;
+    for (let i = 0; i < 25; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'story-particle';
+        const size = Math.random() * 5 + 2;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDuration = (Math.random() * 10 + 8) + 's';
+        particle.style.animationDelay = (Math.random() * 10) + 's';
         container.appendChild(particle);
     }
 }
