@@ -381,15 +381,21 @@ function applyRTLHero() {
     if (!left || !right) return;
     
     if (isRTL) {
-        hero.style.flexDirection = 'row-reverse';
-        left.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)';
+        // Move image before text in DOM
+        if (hero.children[0] !== right) {
+            hero.insertBefore(right, left);
+        }
         right.style.marginLeft = '0';
         right.style.marginRight = '-12%';
+        left.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)';
     } else {
-        hero.style.flexDirection = 'row';
-        left.style.clipPath = 'polygon(0 0, 100% 0, 80% 100%, 0 100%)';
+        // Move text before image in DOM
+        if (hero.children[0] !== left) {
+            hero.insertBefore(left, right);
+        }
         right.style.marginLeft = '-12%';
         right.style.marginRight = '0';
+        left.style.clipPath = 'polygon(0 0, 100% 0, 80% 100%, 0 100%)';
     }
 }
 

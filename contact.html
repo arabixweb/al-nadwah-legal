@@ -62,48 +62,6 @@
         </div>
     </section>
 
-    <script>
-        function applyRTLHero() {
-            const hero = document.getElementById('aboutHero');
-            if (!hero) return;
-            const isRTL = document.documentElement.dir === 'rtl';
-            const left = hero.querySelector('.about-hero-left');
-            const right = hero.querySelector('.about-hero-right');
-            if (isRTL && left && right) {
-                left.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)';
-                left.style.flex = '1';
-                right.style.marginLeft = '0';
-                right.style.marginRight = '-12%';
-                hero.style.flexDirection = 'row-reverse';
-            } else if (!isRTL && left && right) {
-                left.style.clipPath = 'polygon(0 0, 100% 0, 80% 100%, 0 100%)';
-                right.style.marginLeft = '-12%';
-                right.style.marginRight = '0';
-                hero.style.flexDirection = 'row';
-            }
-        }
-        document.addEventListener('DOMContentLoaded', applyRTLHero);
-        const observer = new MutationObserver(applyRTLHero);
-        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['dir'] });
-    </script>
-
-    <style>
-        /* Force RTL hero override - more specific targeting */
-        html[dir="rtl"] .about-hero {
-            flex-direction: row-reverse !important;
-        }
-        html[dir="rtl"] .about-hero-left {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%) !important;
-        }
-        html[dir="rtl"] .about-hero-right {
-            margin-left: 0 !important;
-            margin-right: -12% !important;
-        }
-        html[dir="rtl"] .about-hero-content {
-            text-align: right !important;
-        }
-    </style>
-
     <!-- Contact Form & Info -->
     <section style="padding: 6rem 0; background: var(--white);">
         <div class="section-container">
